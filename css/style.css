@@ -1,3 +1,9 @@
+:root {
+  --color-primary: #008248;
+  --color-secondary: #d50032;
+  --color-white: #fff;
+  --color-black: #000;
+}
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +16,7 @@ body {
   font-weight: 400;
   letter-spacing: 1px;
   overflow-x: hidden;
+  line-height: 1.4;
 }
 
 img {
@@ -26,44 +33,76 @@ ul {
   list-style: none;
 }
 
+p {
+  line-height: 1.7;
+}
 .main-header {
   box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 2px 2px rgb(0 0 0 / 6%),
     0 0 2px rgb(0 0 0 / 7%);
 }
 
 #logo {
-  width: 51px;
   height: 51px;
+  width: 51px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  border-radius: 50px;
+  line-height: 1.2;
+  font-weight: 100;
+}
+
+.btn-light {
+  color: #000;
+  background: var(--color-white);
+  border: 1px solid rgb(155, 155, 155);
+}
+.btn-dark {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+.btn-dark:hover {
+  color: #333;
+}
+
+.btn-dark-outline {
+  border-color: var(--color-black);
+  color: var(--color-black);
+}
+
+.btn-dark-outline:hover {
+  background-color: rgba(0, 0, 0, 0, 06);
+}
+
+.btn-light-outline {
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+
+.btn-white {
+  border: 1px solid var(--color-white);
+  color: var(--color-white);
+}
+
+.btn-green {
+  color: #008248;
+  border: 1px solid #008248;
+  padding: 0.3rem 1rem;
+  font-weight: bold;
 }
 
 /* Utilities */
 .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 1rem 3rem;
+  padding: 1rem 2rem;
 }
 
-.btn {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border-radius: 1rem;
-}
-
-.btn-light {
-  color: #000;
-  background: #fff;
-  border: 1px solid rgb(155, 155, 155);
-}
-.btn-dark {
-  background: #000;
-  color: #fff;
-}
-
-.btn-white {
-  border: 1px solid #fff;
-  color: #fff;
-}
 .text-center {
   text-align: center;
 }
@@ -74,6 +113,13 @@ ul {
   align-items: center;
   justify-content: center;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
 /* Margin and Padding */
 .m-1 {
   margin: 1rem;
@@ -139,6 +185,7 @@ ul {
   padding: 5rem 0;
 }
 /* Main nav */
+
 .main-nav {
   display: flex;
   flex-direction: column;
@@ -163,6 +210,9 @@ ul {
   text-transform: capitalize;
 }
 
+/* .main-nav .nav-links-right .btn-light {
+  padding: 0.5rem 1rem;
+} */
 .main-nav .nav-links-right span {
   position: relative;
   bottom: 0.2rem;
@@ -171,65 +221,66 @@ ul {
   width: 1.2rem;
   display: inline-block;
   margin-right: 0.3rem;
+  transition: 0.5s ease;
 }
+
 .main-nav .pin:hover {
-  background-image: url(../img/placeholder1.svg);
+  opacity: 0.5;
 }
 .main-nav a {
   transition: 0.4s ease;
 }
 
 .main-nav a:hover {
-  color: #008248;
+  color: var(--color-primary);
 }
 
-.main-nav .nav-links-right .sign-in:hover {
+.main-nav .nav-links-right li:nth-child(2):hover {
   background: rgba(0, 0, 0, 0.06);
   color: #000;
 }
 .main-nav .nav-links-right .join-now:hover {
   opacity: 0.7;
-  color: #fff;
+  color: var(--color-white);
 }
 
-/* intro message */
+/* Middle section */
+.sticky-banner {
+  width: 100%;
+  position: relative;
+}
 
-.intro {
-  background: #d8e8e3;
-  color: #000;
+.sticky-banner a {
+  position: absolute;
+  bottom: 4rem;
+  left: 1rem;
+  z-index: 200;
+}
+
+.middle {
+  padding: 2rem 3rem;
+  background-color: rgb(236, 236, 236);
+}
+
+.middle p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #6c6c6c;
+}
+
+.middle h3 {
+  color: var(--color-black);
+  margin-top: 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
-  line-height: 1.7;
 }
 
-.intro p {
-  max-width: 600px;
-  margin: 0 auto;
+.middle .text {
+  background-color: var(--color-white);
+  padding: 1rem 1.5rem;
+  height: 40vh;
 }
 
-.intro a {
-  text-decoration: underline;
-}
-
-.intro a:hover {
-  text-decoration: none;
-}
-
-/* Main */
-main {
-  line-height: 1.7;
-}
-/* info section */
-
-.info-text {
-  background-color: #1e3932;
-  color: #fff;
-  font-size: 1.5rem;
-}
-
-.info-text .btn {
-  font-size: 0.8rem;
-  font-weight: bold;
-}
 /* MEDIA QUERIES */
 @media (min-width: 768px) {
   .main-nav ul {
@@ -237,15 +288,21 @@ main {
     align-items: center;
   }
   .main-nav li {
-    padding: 1rem;
+    padding: 0.7rem;
   }
 
-  .info .flex {
-    flex-direction: row;
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
 
-  .info-img {
-    order: 2;
+  .sticky-banner {
+    min-height: 100vh;
+  }
+  .holiday-banner,
+  .middle {
+    width: 100%;
   }
 }
 
@@ -256,5 +313,22 @@ main {
   .main-nav {
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  .grid img {
+    width: 100%;
+  }
+
+  .flex {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .sticky-banner {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    width: 100%;
+    height: 100vh;
   }
 }
