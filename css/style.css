@@ -36,15 +36,6 @@ ul {
 p {
   line-height: 1.7;
 }
-.main-header {
-  box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 2px 2px rgb(0 0 0 / 6%),
-    0 0 2px rgb(0 0 0 / 7%);
-}
-
-#logo {
-  height: 51px;
-  width: 51px;
-}
 
 /* Buttons */
 .btn {
@@ -184,11 +175,61 @@ p {
 .py-5 {
   padding: 5rem 0;
 }
+
+/* Hamburger Menu Icon */
+.hamburger {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  z-index: 10;
+  transition: all 0.2s ease;
+  display: block;
+}
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  top: 20%;
+  right: 0;
+  width: 24px;
+  height: 3px;
+  background: var(--color-black);
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.hamburger-top {
+  transform: translateY(-7px);
+}
+.hamburger-bottom {
+  transform: translateY(7px);
+}
+.open .hamburger-top {
+  transform: rotate(45deg);
+}
+.open .hamburger-middle {
+  display: none;
+}
+.open .hamburger-bottom {
+  transform: rotate(-45deg);
+}
 /* Main nav */
+.main-header {
+  box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 2px 2px rgb(0 0 0 / 6%),
+    0 0 2px rgb(0 0 0 / 7%);
+}
+
+#logo {
+  height: 41px;
+  width: 41px;
+}
 
 .main-nav {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .main-nav ul {
@@ -244,6 +285,10 @@ p {
   color: var(--color-white);
 }
 
+.main-nav .nav-links-left,
+.main-nav .nav-links-right {
+  display: none;
+}
 /* Middle section */
 .sticky-banner {
   width: 100%;
@@ -283,14 +328,39 @@ p {
 
 /* MEDIA QUERIES */
 @media (min-width: 768px) {
-  .main-nav ul {
-    flex-direction: row;
-    align-items: center;
+  .hamburger {
+    display: none;
   }
+  #logo {
+    height: 51px;
+    width: 51px;
+  }
+
+  /* .main-header .container {
+    display: flex;
+    justify-content: space-between;
+  } */
+  .main-nav {
+    display: flex;
+    flex-direction: row;
+  }
+  .main-nav ul {
+    display: flex;
+    flex-direction: row;
+  }
+
   .main-nav li {
     padding: 0.7rem;
   }
 
+  .main-nav .nav-links-left,
+  .main-nav .nav-links-right {
+    display: inline-flex;
+  }
+
+  .main-nav .nav-links-right {
+    margin-left: auto;
+  }
   .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -307,9 +377,6 @@ p {
 }
 
 @media (min-width: 1024px) {
-  .main-nav .nav-links-right {
-    margin-left: auto;
-  }
   .main-nav {
     flex-direction: row;
     justify-content: space-between;
