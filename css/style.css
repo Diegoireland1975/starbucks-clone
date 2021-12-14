@@ -350,14 +350,15 @@ p {
 }
 
 .middle {
-  padding: 2rem 3rem;
+  padding: 2rem 1.5rem;
   background-color: rgb(236, 236, 236);
 }
 
 .middle p {
-  margin: 0.5rem 0;
-  font-size: 0.9rem;
+  margin: 1.5rem 0;
+  font-size: 0.8rem;
   color: #6c6c6c;
+  line-height: 1.3;
 }
 
 .middle h3 {
@@ -373,6 +374,9 @@ p {
   height: 40vh;
 }
 
+.grid p {
+  margin: 0.5rem 0 0.8rem;
+}
 /* footer */
 /* Accordion */
 .accordion .flex {
@@ -498,7 +502,7 @@ p {
   .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 0.8rem;
   }
 
   .sticky-banner img {
@@ -526,11 +530,14 @@ p {
     justify-content: space-between;
   }
 
+  .middle {
+    padding: 2rem 3rem;
+  }
   .sticky-banner {
     position: sticky;
     top: 0;
     align-self: flex-start;
-    width: 100%;
+    width: 150%;
     height: 100vh;
   }
 }
