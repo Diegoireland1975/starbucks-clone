@@ -406,7 +406,7 @@ p {
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: all 0.4s;
+  transition: max-height 1s ease-in-out;
 }
 
 .accordion-header.show + .accordion-content {
@@ -442,6 +442,7 @@ p {
 .social-img {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 .social img {
   width: 2rem;

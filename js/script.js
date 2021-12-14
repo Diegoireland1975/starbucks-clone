@@ -10,8 +10,8 @@ btn.addEventListener("click", () => {
 
 // Collapsible elements
 
-const accordionButtons = document.querySelectorAll("#accordion-header");
-const accordionContents = document.querySelectorAll("#accordion-content");
+const accordionButtons = document.querySelectorAll(".accordion-header");
+const accordionContents = document.querySelectorAll(".accordion-content");
 const arrow = document.getElementsByClassName("arrow");
 
 accordionButtons.forEach((accordionButton) => {
