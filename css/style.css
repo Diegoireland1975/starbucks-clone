@@ -228,7 +228,7 @@ p {
   transform: translateX(100%);
   line-height: 3;
   padding: 2rem 1.5rem;
-  transition: 0.5s ease;
+  transition: 0.4s ease;
 }
 
 .mobile-menu.show {
@@ -346,6 +346,7 @@ p {
   bottom: 4rem;
   left: 1rem;
   z-index: 200;
+  white-space: nowrap;
 }
 
 .middle {
@@ -372,6 +373,92 @@ p {
   height: 40vh;
 }
 
+/* footer */
+/* Accordion */
+.accordion .flex {
+  flex-direction: row;
+  justify-content: space-between;
+}
+.accordion .arrow {
+  width: 2.5rem;
+  border-radius: 50%;
+  padding: 0.5rem;
+  transition: 0.4s ease;
+}
+
+.accordion .arrow:hover {
+  background-color: #ccc;
+}
+
+.accordion-header {
+  cursor: pointer;
+}
+
+.accordion-header h2 {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+.accordion-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+
+.accordion-header.show + .accordion-content {
+  max-height: 100vh;
+  opacity: 1;
+}
+
+.accordion-header.show > .arrow {
+  transform: rotate(-180deg);
+}
+.accordion-content li {
+  line-height: 3;
+  font-size: 0.8rem;
+  color: #555;
+  font-weight: bold;
+  transition: 1s ease;
+  cursor: pointer;
+}
+.accordion-content li:hover {
+  color: var(--color-black);
+}
+
+.accordion:last-child {
+  border-bottom: 1px solid #ccc;
+}
+
+/* Social Icon */
+
+.social {
+  align-items: flex-start;
+  padding-top: 2rem;
+}
+.social-img {
+  display: flex;
+  align-items: center;
+}
+.social img {
+  width: 2rem;
+  margin-right: 1rem;
+}
+
+.social ul {
+  padding: 1.5rem 0;
+}
+.social li {
+  line-height: 3;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.social a {
+  transition: 0.4s ease;
+}
+.social a:hover {
+  color: #999;
+}
 /* MEDIA QUERIES */
 @media (min-width: 768px) {
   .hamburger,
@@ -414,8 +501,9 @@ p {
     gap: 2rem;
   }
 
-  .sticky-banner {
-    min-height: 100vh;
+  .sticky-banner img {
+    height: 100vh;
+    object-fit: cover;
   }
   .holiday-banner,
   .middle {
@@ -433,7 +521,7 @@ p {
     width: 100%;
   }
 
-  .flex {
+  .main-flex {
     flex-direction: row;
     justify-content: space-between;
   }
