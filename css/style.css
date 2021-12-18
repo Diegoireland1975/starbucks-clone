@@ -406,7 +406,7 @@ p {
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: max-height 1s ease-in-out;
+  transition: max-height 0.8s;
 }
 
 .accordion-header.show + .accordion-content {
