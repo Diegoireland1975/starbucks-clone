@@ -382,6 +382,10 @@ p {
 .grid p {
   margin: 0.5rem 0 0.8rem;
 }
+
+.grid a {
+  font-size: 0.8rem;
+}
 /* footer */
 /* Accordion */
 .accordion .flex {
