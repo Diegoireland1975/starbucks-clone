@@ -288,13 +288,14 @@ p {
 .main-nav li {
   margin-bottom: 1rem;
   text-transform: uppercase;
-  font-weight: 700;
-  font-size: 0.9rem;
+  font-weight: 900;
+  font-size: 0.75rem;
   white-space: nowrap;
 }
 
 .main-nav .nav-links-right li {
   text-transform: capitalize;
+  font-size: 0.8rem;
 }
 
 /* .main-nav .nav-links-right .btn-light {
@@ -477,6 +478,7 @@ p {
   #logo {
     height: 51px;
     width: 51px;
+    margin-right: 2rem;
   }
 
   /* .main-header .container {
