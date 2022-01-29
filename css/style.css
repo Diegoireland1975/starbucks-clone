@@ -323,7 +323,7 @@ p {
 }
 
 .main-nav .nav-links-right li:nth-child(2):hover {
-  background: rgba(0, 0, 0, 0.06);
+  /* background: rgba(0, 0, 0, 0.06); */
   color: #000;
 }
 .main-nav .nav-links-right .join-now:hover {
@@ -349,6 +349,10 @@ p {
   white-space: nowrap;
 }
 
+.sticky-banner img {
+  object-fit: contain;
+  object-position: center;
+}
 .middle {
   padding: 2rem 1.5rem;
   background-color: rgb(236, 236, 236);
